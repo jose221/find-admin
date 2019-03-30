@@ -1,0 +1,168 @@
+<!--Menú -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">FIND-CHILD</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menú
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/home#download">Descargar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/home#features">Beneficios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="/home#contact">Contactanos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/register']" routerLinkActive="router-link-active" >Registrarse</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/login']" routerLinkActive="router-link-active" >Iniciar Sesión</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-lg-7 my-auto">
+        <div class="header-content mx-auto">
+          <h2  >Con nuestra aplicación puedes sentirte más seguro</h2>
+          <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Saber Más  </a>
+        </div>
+      </div>
+      <div class="col-lg-5 my-auto">
+        <div class="device-container">
+          <div class="device-mockup iphone6_plus portrait white">
+            <div class="device">
+              <div class="screen">
+                <!-- esta demuestra la imafen de la parte del header la imagen no funciona porque no tiene aun la captura de la palicación, es  el mockup -->
+                <img src="img/demo-screen-1.jpg" class="img-fluid" alt="">
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-heading text-center">
+      <h2>La mejor opción para tí</h2>
+      <p class="text-muted">Los beneficios son:</p>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 my-auto">
+        <div class="device-container">
+          <div class="device-mockup iphone6_plus portrait white">
+            <div class="device">
+              <div class="screen">
+                <!-- Este es el mockup del iphone|-->
+                <img src="img/demo-screen-1.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="button">
+                <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <!--este es la parte donde se localiza los iconos de las caracteristicas de la aplicación-->
+      <div class="col-lg-8 my-auto">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="feature-item">
+                <i class="icon-screen-smartphone text-primary"></i>
+                <h3>Facil de utilizar</h3>
+                <p class="text-muted">la aplicacion esta diseñado para la seguridad de tu hijo</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="feature-item">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Acceso en cualquier lugar</h3>
+                <p class="text-muted">Puedes localizar a tu familia en cual quier lugar</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="feature-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Localización</h3>
+                <p class="text-muted">Puedes localizar a tu hijo de forma facil y en tiempo real</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Seguridad al maximo</h3>
+                <p class="text-muted">Protege a tu hijo y solo tú puedes verlo</p>
+              </div>
+            </div>
+            <div style="text-align:center; margin: auto; display: block;">
+            <button type="button" class="btn btn-primary btn-lg" id="download">DESCARGAR</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--este es la parte de el del footer donde se ven las redes sociales-->
+<section class="contact bg-primary" id="contact">
+  <div class="container">
+    <h2>Contactanos
+      <i class="fas fa-heart"></i>
+      estamos disponibles en...</h2>
+    <ul class="list-inline list-social">
+      <li class="list-inline-item social-twitter">
+        <a href="#">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      <li class="list-inline-item social-facebook">
+        <a href="#">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+      <li class="list-inline-item social-google-plus">
+        <a href="#">
+          <i class="fab fa-google-plus-g"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+<!--este es el footer-->
+<footer>
+  <div class="container">
+    <p>&copy; Sitio web 2019. José Angel</p>
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        <a href="#">Privacy</a>
+      </li>
+      <li class="list-inline-item">
+        <a href="#">Terms</a>
+      </li>
+      <li class="list-inline-item">
+        <a href="#">FAQ</a>
+      </li>
+    </ul>
+  </div>
+</footer>

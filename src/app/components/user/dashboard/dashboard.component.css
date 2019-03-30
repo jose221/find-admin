@@ -1,0 +1,52 @@
+agm-map {
+    height: 200px;
+}
+
+.map-home {
+    height: 400px !important;
+}
+
+.dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+}
+
+.dark-modal .close {
+    color: white;
+}
+
+.light-blue-backdrop {
+    background-color: #5cb3fd;
+}
+
+.error-messages {
+    font-size: 0.7em;
+    color: red;
+    text-align: center;
+}
+
+.container {
+    margin-top: 10px;
+    border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+
+-webkit-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 29px 0px rgba(0,0,0,0.75);
+
+
+
+
+
+
+
+
+}
+h3{
+    font-family: 'Karla', sans-serif;
+    text-align: center;
+
+}
+
+
