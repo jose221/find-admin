@@ -104,48 +104,20 @@ export class DashboardComponent implements OnInit {
         } else {
           this.loadMapa = true;
           this.childrens.forEach(element => {
-            const a = element.house.hourIn;
-            const e = element.house.hourOut;
-            const i = element.school.hourIn;
-            const o = element.school.hourOut;
-
-
-            if (a) {
-              this.clockSub = this.clock.subscribe(
-                time => {
-                  this.hour = time.getHours();
-                  this.mm = time.getMinutes();
-                  const aa = '' + time.getHours() + ':' + time.getMinutes();
-                  // console.log(aa);
-                  const b = a.toString();
-                  const c = e.toString();
-
-                  const hourInH = + b.substr(0, 2);
-                  const MinInH = + b.substr(3, 2);
-
-                  const hourOutH = + c.substr(0, 2);
-                  const MinOutH = + c.substr(3, 2);
-                  console.log(
-                    this.hour +
-                    ':' +
-                    this.mm +
-                    '  Eso  ' +
-                    hourInH +
-                    ':' +
-                    MinInH
-                  );
-                  if (this.hour >= hourInH && this.hour <= hourOutH) {
-                    console.log('hOLA AAAMA');
-
-                    if (this.mm >= MinInH && this.mm <= MinOutH) {
-                      console.log('hOLA AAAMA');
-                    }
-                  }
-                }
+              console.log(
+               element.house.hourIn
               );
+              if(!element.lat) {
+                console.log('No existe aun la ubicacion');
 
-
-            }
+              } else {
+                if (
+                  element.house.hourIn === '08:00'
+                 ) {
+                   swal('¡Peligro!', `Tu hijo a salido de la escuela`, 'warning');
+                 }
+              }
+              
 
           });
 
@@ -203,7 +175,7 @@ export class DashboardComponent implements OnInit {
         Validators.compose([Validators.required, Validators.minLength(3)])
       ),
       genre: new FormControl('', Validators.compose([Validators.required])),
-      hour: new FormControl('', Validators.compose([Validators.required]))
+      hour: new FormControl('', [Validators.minLength(1)])
     });
 
     this.error_messages = {

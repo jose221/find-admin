@@ -1,0 +1,83 @@
+
+<nav style="background-color:blue; " class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active" >FIND-CHILD</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+          <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" >Home <span class="sr-only">(current)</span></a>
+        <a  class="nav-link"  (click)="openWindowCustomClass(content)" >Añadir hijo</a>
+        <a class="nav-link"  (click)="trysingOut()">Cerrar Sesión</a>
+       
+      </div>
+    </div>
+  </nav>
+
+<br>
+<br>
+<br>
+<div class="container">
+<h1>Historial del niño</h1>
+<br><br><br>
+<table  style="text-align: center;" class="rwd-table">
+  <tr>
+    <th>nombre</th>
+    <th>Genre</th>
+    <th>Year</th>
+    <th>ver</th>
+  </tr>
+  
+  
+  <tr>
+    <td data-th="Movie Title">American Graffiti</td>
+    <td data-th="Genre">Comedy, Drama</td>
+    <td data-th="Year">1973</td>
+    <td data-th="Gross"><button  class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" ><i class="far fa-eye"></i></button></td>
+  </tr>
+</table>
+<br><br>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ubicación</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <!--  <h3>Mapa <small *ngIf="siguiendoNombre">siguiendo a: {{ siguiendoNombre }}</small> </h3>
+      <agm-map *ngIf="loadMapa" class="map-home" [latitude]="lat" [longitude]="lng" [zoom]="14" (mapClick)="schoolClicked($event)">
+            <div *ngFor="let children of childrens">
+                <agm-marker *ngIf="children.genre == 'Niño'" [iconUrl]="boyUrl" [latitude]="children.lat" [longitude]="children.lng">
+                </agm-marker>
+                <agm-marker *ngIf="children.genre == 'Niña'" [iconUrl]="girlUrl" [latitude]="children.lat" [longitude]="children.lng">
+                </agm-marker>
+
+                <agm-marker [iconUrl]="homeUrl" [latitude]="children.house.lat" [longitude]="children.house.lng">
+                </agm-marker>
+                <agm-marker [iconUrl]="schoolUrl" [latitude]="children.school.lat" [longitude]="children.school.lng">
+                </agm-marker>
+            </div>
+            
+        </agm-map>
+        <div *ngIf="!loadMapa"> 
+          -->
+            <div class="jumbotron jumbotron-fluid">
+                <div >
+                  <h1 class="display-4">NO HAY HIJOS</h1>
+                  <p class="lead"> Necesitas añadir un hijo primero para mostrar el mapa</p>
+                </div>
+              </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+

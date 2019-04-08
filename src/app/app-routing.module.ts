@@ -8,6 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/auth/login/login.component';
 import { DashboardComponent } from './components/user/dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { HistorialComponent } from './niñi/historial/historial.component';
 
 const routes: Routes = [
   
@@ -27,6 +28,11 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [UserauthGuard]
+  },
+  {
+    path: 'history',
+    component: HistorialComponent,
     canActivate: [UserauthGuard]
   },
   {path:'**', component:NotfoundComponent },

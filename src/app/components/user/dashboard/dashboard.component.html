@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Select GENRE</label>
+                <label for="exampleFormControlSelect1">Seleccionar genero</label>
                 <select class="form-control" class="form-control" formControlName="genre" id="exampleFormControlSelect1">
                 <option [value]="genre" *ngFor="let genre of genres">{{genre}}</option>
                 </select>
@@ -60,9 +60,9 @@
             </agm-map>
 
             <h6>Hora de entrada</h6>
-            <input formControlName="hour" [(ngModel)]="hourInH" type="time">
+            <input formControlName="hour" [(ngModel)]="hourInH" type="hour">
             <h6>Hora de salida</h6>
-            <input formControlName="hour" [(ngModel)]="hourOutH" type="time">
+            <input formControlName="hour" [(ngModel)]="hourOutH" type="hour">
 
 
 
@@ -76,64 +76,63 @@
                 </agm-marker>
             </agm-map>
             <h6>Hora de entrada</h6>
-            <input formControlName="hour" [(ngModel)]="hourInS" type="time">
+            <input formControlName="hour" [(ngModel)]="hourInS" type="hour">
             <h6>Hora de salida</h6>
-            <input formControlName="hour" type="time" [(ngModel)]="hourOutS">
+            <input formControlName="hour" type="hour" [(ngModel)]="hourOutS">
             <br>
 
-            <input type="submit" class="btn btn-lg btn-primary" [disabled]="!childrenForm.valid" value="Añadir" (click)="form(childrenForm.value)">
+            <input type="submit" class="btn btn-lg btn-primary" value="Añadir" (click)="form(childrenForm.value)">
         </form>
     </div>
 
 
 
-    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }">
-    </ngx-loading>
-</ng-template>
+      <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+  </ng-template>
 <br>
 <div class="container">
-<br>
-<br>
-<div class="row pad-10">
-    <div class="col-8">
-        <h3>Mapa <small *ngIf="siguiendoNombre">siguiendo a: {{ siguiendoNombre }}</small> </h3>
-        <agm-map *ngIf="loadMapa" class="map-home" [latitude]="lat" [longitude]="lng" [zoom]="14" (mapClick)="schoolClicked($event)">
-            <div *ngFor="let children of childrens">
-                <agm-marker *ngIf="children.genre == 'Niño'" [iconUrl]="boyUrl" [latitude]="children.lat" [longitude]="children.lng">
-                </agm-marker>
-                <agm-marker *ngIf="children.genre == 'Niña'" [iconUrl]="girlUrl" [latitude]="children.lat" [longitude]="children.lng">
-                </agm-marker>
+   <br>
+   <br>
+     <div class="row pad-10">
+        <div class="col-8">
+          <h3>Mapa <small *ngIf="siguiendoNombre">siguiendo a: {{ siguiendoNombre }}</small> </h3>
+               <agm-map *ngIf="loadMapa" class="map-home" [latitude]="lat" [longitude]="lng" [zoom]="14" (mapClick)="schoolClicked($event)">
+                   <div *ngFor="let children of childrens">
+                      <agm-marker *ngIf="children.genre == 'Niño'" [iconUrl]="boyUrl" [latitude]="children.lat" [longitude]="children.lng">
+                      </agm-marker>
+                      <agm-marker *ngIf="children.genre == 'Niña'" [iconUrl]="girlUrl" [latitude]="children.lat" [longitude]="children.lng">
+                      </agm-marker>
 
-                <agm-marker [iconUrl]="homeUrl" [latitude]="children.house.lat" [longitude]="children.house.lng">
-                </agm-marker>
-                <agm-marker [iconUrl]="schoolUrl" [latitude]="children.school.lat" [longitude]="children.school.lng">
-                </agm-marker>
-            </div>
+                      <agm-marker [iconUrl]="homeUrl" [latitude]="children.house.lat" [longitude]="children.house.lng">
+                      </agm-marker>
+                      <agm-marker [iconUrl]="schoolUrl" [latitude]="children.school.lat" [longitude]="children.school.lng">
+                      </agm-marker>
+                  </div>
 
-        </agm-map>
-        <div *ngIf="!loadMapa">
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                  <h1 class="display-4">NO HAY HIJOS</h1>
-                  <p class="lead"> Necesitas añadir un hijo primero para mostrar el mapa</p>
-                </div>
+               </agm-map>
+               <div *ngIf="!loadMapa">
+                  <div class="jumbotron jumbotron-fluid">
+                     <div >
+                       <h1 class="display-4">NO HAY HIJOS</h1>
+                       <p class="lead"> Necesitas añadir un hijo primero para mostrar el mapa</p>
+                     </div>
               </div>
           
-        </div>
-    </div>
-    <div *ngIf="loadMapa" class="col-4">
+      </div>
+  </div>
+  <div *ngIf="loadMapa" class="col-4">
 
-        <h3>Hijos xd</h3>
-        <div class="list-group">
-            <a (click)="seguir(children)" *ngFor="let children of childrens" class="list-group-item list-group-item-action">
-          {{ children.name }}
-        </a>
-            <br>
-            <button *ngIf="siguiendoNombre" (click)="dejarDeSeguir()" class="btn btn-primary btn-block">
-          Dejar de seguir
-        </button> {{time}}
-        </div>
-    </div>
+      <h3>Hijos xd</h3>
+         <div class="list-group">
+               <a (click)="seguir(children)" *ngFor="let children of childrens" class="list-group-item list-group-item-action">
+                  {{ children.name }}
+               </a>
+               <br>
+                 <button *ngIf="siguiendoNombre" (click)="dejarDeSeguir()" class="btn btn-primary btn-block">
+                    Dejar de seguir
+                 </button> {{time}}
+         </div>
+  </div>
 </div>
 <br>
 <br>

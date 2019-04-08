@@ -24,6 +24,7 @@ import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap'
 import { NgxLoadingModule } from 'ngx-loading';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './error/notfound/notfound.component';
+import { HistorialComponent } from './niñi/historial/historial.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { NotfoundComponent } from './error/notfound/notfound.component';
     RegisterComponent,
     DashboardComponent,
     HomeComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    HistorialComponent
   ],
   imports: [
     BrowserModule,
